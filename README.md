@@ -1,3 +1,6 @@
+## kospi System
+본 프로젝트는 React 포트폴리오 목적으로 만들었습니다.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
