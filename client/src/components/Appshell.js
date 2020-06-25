@@ -1,6 +1,6 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import IconButton from '@material-ui/core/IconButton';
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
@@ -11,82 +11,74 @@ import Typography from "@material-ui/core/Typography";
 import MenuIcon from '@material-ui/icons/Menu';
 import AppBar from '@material-ui/core/AppBar';
 
-
-const useStyles = makeStyles({
+const styles = {
   list: {
-    width: 250,
-    overflowY: "auto"
+    width: 250
   },
-  drawer: {
-    overflow: "hidden"
+  fullList: {
+    width: 'auto'
   }
-});
-
-
-export default function Appsell() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
+};
+class Appshell extends React.Component {
+  state = {
     top: false,
     left: false,
     bottom: false,
     right: false
-  });
-
-  const toggleDrawer = (side, open) => event => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-
-    setState({ ...state, [side]: open });
   };
-
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      <List>
-      <ListItem button>
-      <ListItemText primary="관심종목" align="" />
-      </ListItem>
-      <ListItem button>
-      <ListItemText primary="KOSPI 200" align="" />
-      </ListItem>
-      </List>
-      <Divider />
-      <List>
-      <ListItem button>
-      <ListItemText primary="전체보기" align="" />
-      </ListItem>
-      </List>
-    </div>
-  );
-  
-  return (
-    <div>
-        <IconButton className={classes.menuButton} color="inherit" onClick={toggleDrawer("left", true)}>
-    <MenuIcon/>
-    </IconButton>
-      
-      <Drawer
-        classes={{
-          paper: classes.drawer
-        }}
-        open={state.left}
-        onClose={toggleDrawer("left", false)}
-      >
-        <AppBar position="static">
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+  render() {
+    const { classes } = this.props;
+    const sideList = 
+    <div className={classes.list}>
+      <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" align="center">주식</Typography>
           </Toolbar>
-        </AppBar>
-        {sideList("left")}
-      </Drawer>
-    </div>
-  );
-}
+      </AppBar>
+      <List>
+        <ListItem button onClick={this.props.handleServer_1}>
+          <ListItemText primary="관심종목" align="" />
+        </ListItem>
+        <ListItem button onClick={this.props.handleServer_2}>
+          <ListItemText primary="KOSPI 200" align="" />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button onClick={this.props.handleServer_0}>
+          <ListItemText primary="전체보기" align="" />
+        </ListItem>
+      </List>
+    </div>;
+
+    return (
+         <div>
+            <IconButton 
+              className={classes.menuButton} 
+              color="inherit" 
+              onClick={this.toggleDrawer("left", true)}>
+                <MenuIcon/>
+            </IconButton>
+            <SwipeableDrawer 
+              open={this.state.left} 
+              onClose={this.toggleDrawer('left', false)} 
+              onOpen={this.toggleDrawer('left', true)}>
+              <div 
+              tabIndex={0} 
+              role="button" 
+              onClick={this.toggleDrawer('left', false)} 
+              onKeyDown={this.toggleDrawer('left', false)}>
+                {sideList}
+              </div>
+            </SwipeableDrawer>
+          </div>
+        );
+      }
+    }
+
+export default withStyles(styles)(Appshell);

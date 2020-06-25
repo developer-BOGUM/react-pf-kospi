@@ -17,7 +17,6 @@ import { fade } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 import TableContainer from '@material-ui/core/TableContainer';
-import { Button } from '@material-ui/core';
 
 const Styles = theme => ({
   root: {
@@ -76,7 +75,7 @@ const Styles = theme => ({
     margin: 11,
   },
   table: {
-    minWidth: 348,
+    minWidth: 298,
   },
 
 });
@@ -130,6 +129,13 @@ class App extends React.Component {
     });
     this.stateRefresh();
   }
+  
+  handleServer_0 = () => {
+    this.setState({
+    serverCh : 0
+    });
+    this.stateRefresh();
+  }
 
   handleValueChange = (e) => {
     let nextState = {};
@@ -156,7 +162,7 @@ class App extends React.Component {
         <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <Appsell callapi={this.props.callapi}/>
+            <Appsell handleServer_1={this.handleServer_1} handleServer_2={this.handleServer_2} handleServer_0={this.handleServer_0}/>
             <Typography className={classes.title} variant="h6" noWrap>
               KOSPI 전체보기
             </Typography>
@@ -177,7 +183,6 @@ class App extends React.Component {
             </div>
           </Toolbar>
         </AppBar>
-        <Button onClick={this.handleServer_1}>누르자 제발</Button>
         <Paper className={classes.paper} >
         <TableContainer>
         <Table className={classes.table} aria-label="simple table">
