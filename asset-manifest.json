@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-pf-kospi/static/css/main.e0ecd59c.chunk.css",
+    "main.js": "/react-pf-kospi/static/js/main.eabd0a53.chunk.js",
+    "main.js.map": "/react-pf-kospi/static/js/main.eabd0a53.chunk.js.map",
+    "runtime-main.js": "/react-pf-kospi/static/js/runtime-main.fb8d2b13.js",
+    "runtime-main.js.map": "/react-pf-kospi/static/js/runtime-main.fb8d2b13.js.map",
+    "static/js/2.367f7733.chunk.js": "/react-pf-kospi/static/js/2.367f7733.chunk.js",
+    "static/js/2.367f7733.chunk.js.map": "/react-pf-kospi/static/js/2.367f7733.chunk.js.map",
+    "index.html": "/react-pf-kospi/index.html",
+    "precache-manifest.86fb78c53e42e372875bc3eac3b3d329.js": "/react-pf-kospi/precache-manifest.86fb78c53e42e372875bc3eac3b3d329.js",
+    "service-worker.js": "/react-pf-kospi/service-worker.js",
+    "static/css/main.e0ecd59c.chunk.css.map": "/react-pf-kospi/static/css/main.e0ecd59c.chunk.css.map",
+    "static/js/2.367f7733.chunk.js.LICENSE.txt": "/react-pf-kospi/static/js/2.367f7733.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb8d2b13.js",
+    "static/js/2.367f7733.chunk.js",
+    "static/css/main.e0ecd59c.chunk.css",
+    "static/js/main.eabd0a53.chunk.js"
+  ]
+}
