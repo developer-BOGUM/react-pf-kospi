@@ -22,6 +22,22 @@ class Stock extends React.Component {
              else {
                 return null;
              }
+        }
+        else if(this.props.serverCh === 2) {
+            if(this.props.index200 === 1) {
+                return (
+                        <TableRow>
+                            <TableCell align="center" colSpan="1" className="displaynone">{this.props.codekey}</TableCell>
+                            <TableCell align="left" colSpan="2">{this.props.name}</TableCell>
+                            <TableCell align="right" colSpan="1">{this.props.now}</TableCell>
+                            <FluctuatColor fluctuat={this.props.fluctuat}/>
+                            <MyStockAdd stateRefresh={this.props.stateRefresh} codekey={this.props.codekey} myattention={this.props.myattention}/>
+                         </TableRow>
+                        );
+             }
+             else {
+                return null;
+             }
                 
         }
         else if (this.props.serverCh === 0) {

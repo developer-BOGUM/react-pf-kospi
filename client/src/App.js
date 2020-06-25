@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Stock from './components/Stock';
+import StockSubject from './components/StockSubject';
 import Appsell from './components/Appshell';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -11,7 +12,6 @@ import Paper from '@material-ui/core/Paper'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
@@ -24,13 +24,6 @@ const Styles = theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
   },
   search: {
     position: 'relative',
@@ -70,14 +63,12 @@ const Styles = theme => ({
       },
     }, 
   },
-
   paper: {
     margin: 11,
   },
   table: {
     minWidth: 298,
   },
-
 });
 
 class App extends React.Component {
@@ -153,7 +144,7 @@ class App extends React.Component {
         return c.name.indexOf(this.state.searchKeyword) > -1;
       });
       return data.map((c) => {
-        return <Stock stateRefresh={this.stateRefresh} key={c.codekey} codekey={c.codekey} name={c.name} now={c.now} fluctuat={c.fluctuat} myattention={c.myattention} serverCh={this.state.serverCh} />
+        return <Stock stateRefresh={this.stateRefresh} key={c.codekey} codekey={c.codekey} name={c.name} now={c.now} fluctuat={c.fluctuat} myattention={c.myattention} index200={c.index200} serverCh={this.state.serverCh} />
       });
     }
     const { classes } = this.props;
@@ -163,9 +154,7 @@ class App extends React.Component {
         <AppBar position="static">
           <Toolbar>
             <Appsell handleServer_1={this.handleServer_1} handleServer_2={this.handleServer_2} handleServer_0={this.handleServer_0}/>
-            <Typography className={classes.title} variant="h6" noWrap>
-              KOSPI 전체보기
-            </Typography>
+            <StockSubject serverCh={this.state.serverCh} />
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
