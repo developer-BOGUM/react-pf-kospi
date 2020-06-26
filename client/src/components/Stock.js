@@ -12,7 +12,7 @@ class Stock extends React.Component {
                 return (
                         <TableRow>
                             <TableCell align="center" colSpan="1" className="displaynone">{this.props.codekey}</TableCell>
-                            <TableCell align="left" colSpan="2">{this.props.name}</TableCell>
+                            <TableCell align="left" colSpan="1">{this.props.name}</TableCell>
                             <TableCell align="right" colSpan="1">{this.props.now}</TableCell>
                             <FluctuatColor fluctuat={this.props.fluctuat}/>
                             <MyStockAdd stateRefresh={this.props.stateRefresh} codekey={this.props.codekey} myattention={this.props.myattention}/>
@@ -28,7 +28,7 @@ class Stock extends React.Component {
                 return (
                         <TableRow>
                             <TableCell align="center" colSpan="1" className="displaynone">{this.props.codekey}</TableCell>
-                            <TableCell align="left" colSpan="2">{this.props.name}</TableCell>
+                            <TableCell align="left" colSpan="1">{this.props.name}</TableCell>
                             <TableCell align="right" colSpan="1">{this.props.now}</TableCell>
                             <FluctuatColor fluctuat={this.props.fluctuat}/>
                             <MyStockAdd stateRefresh={this.props.stateRefresh} codekey={this.props.codekey} myattention={this.props.myattention}/>
@@ -44,7 +44,7 @@ class Stock extends React.Component {
             return (
                 <TableRow>
                     <TableCell align="center" colSpan="1" className="displaynone">{this.props.codekey}</TableCell>
-                    <TableCell align="left" colSpan="2">{this.props.name}</TableCell>
+                    <TableCell align="left" colSpan="1">{this.props.name}</TableCell>
                     <TableCell align="right" colSpan="1">{this.props.now}</TableCell>
                     <FluctuatColor fluctuat={this.props.fluctuat}/>
                     <MyStockAdd stateRefresh={this.props.stateRefresh} codekey={this.props.codekey} myattention={this.props.myattention}/>

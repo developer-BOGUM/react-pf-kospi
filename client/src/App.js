@@ -178,7 +178,7 @@ class App extends React.Component {
           <TableHead>
             <TableRow>
                   <TableCell align="center" colSpan="1" className="displaynone">종목코드</TableCell>
-                  <TableCell align="left" colSpan="2">종목명</TableCell>
+                  <TableCell align="left" colSpan="1">종목명</TableCell>
                   <TableCell align="right" colSpan="1">현재가</TableCell>
                   <TableCell align="right" colSpan="1">등락률</TableCell>
                   <TableCell align="center" colSpan="1">관심목록</TableCell>
@@ -188,7 +188,7 @@ class App extends React.Component {
             {this.state.stocks ? 
                   filteredComponents(this.state.stocks) :
                 <TableRow>
-                  <TableCell align="center" colSpan="6">
+                  <TableCell align="center" colSpan="5">
                     <CircularProgress  variant="determinate" value={this.state.completed} />
                   </TableCell>  
                 </TableRow>
