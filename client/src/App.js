@@ -69,6 +69,7 @@ const Styles = theme => ({
   table: {
     minWidth: 298,
   },
+
 });
 
 class App extends React.Component {
@@ -197,6 +198,7 @@ class App extends React.Component {
         </Table>
       </TableContainer>
       </Paper>
+      <p className="foot">Copyright &copy; 2020 BOGUM</p>
     </div>
     );
   }
